@@ -1,0 +1,18 @@
+.feature-card{
+    background-color: rgba($color-white,.7);
+    padding: 1.563rem;
+    border-radius: 3px;
+    box-shadow: 0 1rem 2.5rem rgba($color-dark,.2);
+    transition: all .4s ease-in-out;
+
+    &:hover,&:active,&:focus{
+        transform: translateY(-1rem) scale(1.05);
+    }
+
+    i[class ^= "icon-"]{
+        font-size: 3.75rem;
+        @include backgroundClip;
+        @include lg(to right,$color-primary-light,$color-primary-dark);
+        margin-bottom: 0.625rem;
+    }
+}
