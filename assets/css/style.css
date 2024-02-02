@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+@-webkit-keyframes moveInRight {
+  0% {
+    -webkit-transform: translateX(-6.25rem);
+            transform: translateX(-6.25rem);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translateX(1.875rem);
+            transform: translateX(1.875rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes moveInRight {
+  0% {
+    -webkit-transform: translateX(-6.25rem);
+            transform: translateX(-6.25rem);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translateX(1.875rem);
+            transform: translateX(1.875rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes moveInLeft {
+  0% {
+    -webkit-transform: translateX(6.25rem);
+            transform: translateX(6.25rem);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translateX(-1.875rem);
+            transform: translateX(-1.875rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    -webkit-transform: translateX(6.25rem);
+            transform: translateX(6.25rem);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translateX(-1.875rem);
+            transform: translateX(-1.875rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+::-moz-selection {
+  background-color: #28b485;
+  color: #fff;
+}
+
+::selection {
+  background-color: #28b485;
+  color: #fff;
+}
+
+body {
+  color: #111;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 1.875rem;
+  font-family: "Lato", sans-serif;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+[class^=col-] {
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn, .btn:link, .btn:visited {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.625rem 2.5rem;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 6.25rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+.btn-green {
+  background-color: #28b485;
+  color: #fff;
+}
+.btn::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 6.25rem;
+  z-index: -1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn:hover, .btn:focus {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::before, .btn:focus::before {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 0;
+}
+.btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.313rem 0.625rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.313rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(135deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .logo {
+  width: 7.5rem;
+  display: inline-block;
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+}
+.header .logo img {
+  width: 100%;
+}
+.header-primary {
+  color: #fff;
+  margin-bottom: 3.125rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.header-primary-main {
+  font-size: 3.75rem;
+  letter-spacing: 2.188rem;
+  font-weight: 400;
+  -webkit-animation: moveInRight 1s ease-in-out;
+          animation: moveInRight 1s ease-in-out;
+}
+.header-primary-sub {
+  font-size: 1.25rem;
+  letter-spacing: 1.063rem;
+  -webkit-animation: moveInLeft 1s ease-in-out;
+          animation: moveInLeft 1s ease-in-out;
+}
+/*# sourceMappingURL=style.css.map */
