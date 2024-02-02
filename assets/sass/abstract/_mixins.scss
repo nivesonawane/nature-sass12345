@@ -3,3 +3,12 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin lg($dir,$colors...){
+    background-image: linear-gradient($dir,$colors);
+}
+
+@mixin backgroundClip{
+    background-clip: text;
+    color: transparent;
+}
