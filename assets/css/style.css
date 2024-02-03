@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap");
 @-webkit-keyframes moveInRight {
   0% {
     -webkit-transform: translateX(-6.25rem);
@@ -85,7 +85,7 @@ html {
 }
 
 body {
-  color: #111;
+  color: #777;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
@@ -269,6 +269,143 @@ body {
   margin-bottom: 0.625rem;
 }
 
+.section-tours .card {
+  height: 31.25rem;
+  position: relative;
+}
+.section-tours .card-side {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+}
+.section-tours .card-side-front {
+  background-color: #fff;
+}
+.section-tours .card-side-back {
+  -webkit-transform: perspective(93.75rem) rotateY(180deg);
+          transform: perspective(93.75rem) rotateY(180deg);
+}
+.section-tours .card-side-back-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.section-tours .card-side-back-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.section-tours .card-side-back-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.section-tours .card:hover .card-side-front {
+  -webkit-transform: perspective(93.75rem) rotateY(-180deg);
+          transform: perspective(93.75rem) rotateY(-180deg);
+}
+.section-tours .card:hover .card-side-back {
+  -webkit-transform: perspective(93.75rem) rotateY(0deg);
+          transform: perspective(93.75rem) rotateY(0deg);
+}
+.section-tours .card-img {
+  height: 13.75rem;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+.section-tours .card-img-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url(../img/nat-5.jpg);
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
+}
+.section-tours .card-img-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485)), url(../img/nat-6.jpg);
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg);
+}
+.section-tours .card-img-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url(../img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
+.section-tours .card-heading {
+  position: absolute;
+  top: 6.25rem;
+  right: 1.25rem;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  font-size: 1.75rem;
+  width: 70%;
+}
+.section-tours .card-heading span {
+  padding: 0.625rem 0.938rem;
+  font-weight: 300;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+.section-tours .card-heading-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.section-tours .card-heading-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.section-tours .card-heading-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+.section-tours .card-details {
+  padding: 2rem;
+}
+.section-tours .card-details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.section-tours .card-details ul li {
+  font-size: 1rem;
+  padding: 0.625rem;
+}
+.section-tours .card-details ul li:not(:last-child) {
+  border-bottom: 2px solid #f7f7f7;
+}
+.section-tours .card-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+.section-tours .card-price {
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #fff;
+  font-weight: 100;
+}
+.section-tours .card-price-only {
+  font-size: 1rem;
+}
+.section-tours .card-price-value {
+  font-size: 3.75rem;
+}
+
 .container {
   max-width: 71.25rem;
   width: 100%;
@@ -294,6 +431,12 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
+}
+
+.col-4 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.3333333333%;
+          flex: 0 0 33.3333333333%;
 }
 
 .col-6 {
@@ -381,5 +524,11 @@ body {
 .section-feature > * {
   -webkit-transform: skewY(7deg);
           transform: skewY(7deg);
+}
+
+.section-tours {
+  padding: 15.625rem 0 9.375rem;
+  background-color: #f7f7f7;
+  margin-top: -6.25rem;
 }
 /*# sourceMappingURL=style.css.map */
