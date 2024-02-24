@@ -29,3 +29,8 @@
     padding: 9.375rem 0;
     position: relative;
 }
+
+.section-book{
+    padding: 9.375rem 0;
+    @include lg(to right bottom,$color-primary-light,$color-primary-dark);
+}
