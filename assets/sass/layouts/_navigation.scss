@@ -1,0 +1,119 @@
+.navigation{
+    &-toggle{
+        height: 4.375rem;
+        width: 4.375rem;
+        background-color: $color-white;
+        position: fixed;
+        top: 2.5rem;
+        right: 2.5rem;
+        z-index: 10;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 0.625rem 1.875rem rgba($color-dark,.1);
+        text-align: center;
+    }
+
+    &-icon{
+        width: 30px;
+        height: 2px;
+        background-color: $color-grey-dark1;
+        display: inline-block;
+        margin-top: calc(2.187rem - 1px);
+        position: relative;
+
+        &::after,&::before{
+            content: '';
+            width: 1.875rem;
+            height: 2px;
+            background-color: $color-grey-dark1;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            transition: all .4s ease-in-out;
+        }
+        &::after{
+            top: -8px;
+        }
+        &::before{
+            top: 8px;
+        }
+    }
+
+    &-background{
+        width: 3.75rem;
+        height: 3.75rem;
+        position: fixed;
+        top: 2.813rem;
+        right: 2.813rem;
+        z-index: 7;
+        border-radius: 50%;
+        @include lg($color-primary-light,$color-primary-dark);
+        transition: all .4s cubic-bezier(0.68, -0.55, 0.25, 1.55)
+    }
+
+    &-nav{
+        position: fixed;
+        height: 100vh;
+        width: 0%;
+        left: -100%;
+        top: 0;
+        z-index: 8;
+        @include atCenter;
+        transition: all .6s;
+        opacity: 0;
+    }
+    // &-list{
+    //     list-style: none;
+    // }
+    &-item{
+        margin: 0.625rem;
+        text-align: center;
+    }
+    &-link{
+        &:link,&:visited{
+            display: inline-block;
+            font-size: 1.875rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $color-white;
+            padding: 0.625rem 1.25rem;
+            @include lg(135deg,transparent 0%,transparent 50%,white 50%);
+            background-position: left top;
+            background-size: 245% 245%;
+            transition: all .4s;
+            border-radius: 5px;
+        }
+
+        &:hover,
+        &:focus,&:active{
+            background-position: 100%;
+            color: $color-primary-dark;
+        }
+    }
+
+    &.active{
+        .navigation-background{
+            transform: scale(80);
+        }
+        .navigation-nav{
+            animation: moveInRight .8s ease-in-out;
+        }
+        .navigation-icon{
+            background-color: transparent;
+
+            &::after{
+                top: 0;
+                transform: rotate(135deg);
+            }
+            &::before{
+                top: 0;
+                transform: rotate(-135deg);
+            }
+        }
+        .navigation-nav{
+            left: 0;
+            opacity: 1;
+            width: 100vw;
+        }
+    }
+}
